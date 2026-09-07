@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Niti Tracker - Admin Control Center</title>
+
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+
+<body>
+
+    <!-- Top Navigation -->
+
+    <header class="topbar">
+
+        <div class="brand">
+
+            <div class="brand-logo">
+                NT
+            </div>
+
+            <div class="brand-info">
+                <h2>Niti Tracker</h2>
+                <span>Administration</span>
+            </div>
+
+        </div>
+
+
+        <div class="topbar-right">
+
+            <div class="admin-badge" id="admin-badge">
+                Administrator
+            </div>
+
+            <button id="logout-btn" class="logout-button">
+                Logout
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- Main -->
+
+    <main class="admin-container">
+
+
+        <!-- Welcome -->
+
+        <section class="welcome-card">
+
+            <div>
+
+                <span class="eyebrow">
+                    CONTROL CENTER
+                </span>
+
+                <h1 id="welcome-title">
+                    Niti Tracker Administration
+                </h1>
+
+                <p id="admin-status">
+                    Manage projects, users and system activity.
+                </p>
+
+            </div>
+
+            <div class="welcome-icon">
+                NT
+            </div>
+
+        </section>
+
+
+        <!-- Mode Switch -->
+
+        <div class="mode-switch">
+
+            <button
+                id="view-mode-btn"
+                class="mode-button active"
+            >
+                View Mode
+            </button>
+
+            <button
+                id="edit-mode-btn"
+                class="mode-button"
+            >
+                Edit Mode
+            </button>
+
+        </div>
+
+
+        <!-- ========================= -->
+        <!-- VIEW MODE -->
+        <!-- ========================= -->
+
+        <section id="view-mode" class="mode-content">
+
+
+            <!-- Statistics -->
+
+            <section class="stats-grid">
+
+                <div class="stat-card">
+
+                    <span>Total Projects</span>
+                    <strong id="total-projects">0</strong>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <span>Active Projects</span>
+                    <strong id="active-projects">0</strong>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <span>Completed Projects</span>
+                    <strong id="completed-projects">0</strong>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <span>Total Reviews</span>
+                    <strong id="total-reviews">0</strong>
+
+                </div>
+
+            </section>
+
+
+            <!-- Project Monitoring -->
+
+            <section class="panel">
+
+                <div class="panel-heading">
+
+                    <div>
+                        <span class="eyebrow">
+                            PROJECT MONITORING
+                        </span>
+
+                        <h2>
+                            Government Projects
+                        </h2>
+                    </div>
+
+                    <input
+                        type="text"
+                        id="project-search"
+                        class="search-input"
+                        placeholder="Search projects..."
+                    >
+
+                </div>
+
+
+                <div id="project-list" class="project-list">
+                </div>
+
+            </section>
+
+
+            <!-- Selected Project -->
+
+            <section
+                id="project-details-panel"
+                class="panel project-details-panel"
+            >
+
+                <div class="panel-heading">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            PROJECT DETAILS
+                        </span>
+
+                        <h2 id="project-detail-title">
+                            Select a project
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div id="project-detail-content">
+                </div>
+
+            </section>
+
+
+            <!-- Login Activity -->
+
+            <section class="panel">
+
+                <div class="panel-heading">
+
+                    <div>
+                        <span class="eyebrow">
+                            SYSTEM ACTIVITY
+                        </span>
+
+                        <h2>
+                            Login History
+                        </h2>
+                    </div>
+
+                </div>
+
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="login-table-body">
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </section>
+
+
+        <!-- ========================= -->
+        <!-- EDIT MODE -->
+        <!-- ========================= -->
+
+        <section
+            id="edit-mode"
+            class="mode-content hidden"
+        >
+
+
+            <!-- Assign Roles -->
+
+            <section class="panel">
+
+                <div class="panel-heading">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            USER MANAGEMENT
+                        </span>
+
+                        <h2>
+                            Assign User Role
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="form-field">
+
+                        <label for="user-email">
+                            Gmail Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="user-email"
+                            placeholder="user@gmail.com"
+                        >
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label for="user-role">
+                            Role
+                        </label>
+
+                        <select id="user-role">
+
+                            <option value="citizen">
+                                Citizen
+                            </option>
+
+                            <option value="contractor">
+                                Contractor
+                            </option>
+
+                            <option value="government">
+                                Government
+                            </option>
+
+                            <option value="judiciary">
+                                Judiciary
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div
+                        class="form-field"
+                        id="government-field"
+                    >
+
+                        <label for="government-level">
+                            Government Level
+                        </label>
+
+                        <select id="government-level">
+
+                            <option value="">
+                                Select level
+                            </option>
+
+                            <option value="federal">
+                                Federal Government Official
+                            </option>
+
+                            <option value="provincial">
+                                Provincial Government Official
+                            </option>
+
+                            <option value="local">
+                                Local Level Government Official
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-action">
+
+                        <button
+                            id="save-role"
+                            class="primary-button"
+                        >
+                            Save Role
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <p id="role-message" class="message">
+                </p>
+
+
+                <div class="subsection">
+
+                    <div class="subsection-heading">
+
+                        <h3>
+                            Assigned Users
+                        </h3>
+
+                    </div>
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+                                    <th>Email</th>
+                                    <th>Role</th>
+                                    <th>Government Level</th>
+                                    <th>Action</th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody id="role-table-body">
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Admin Management -->
+
+            <section class="panel">
+
+                <div class="panel-heading">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            ADMINISTRATION
+                        </span>
+
+                        <h2>
+                            Administrator Management
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Main Admin -->
+
+                <div class="main-admin-card">
+
+                    <div class="person-info">
+
+                        <div class="person-avatar">
+                            A
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Main Administrator
+                            </strong>
+
+                            <span>
+                                jhaarchit555@gmail.com
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="protected-badge">
+                        Protected
+                    </div>
+
+                </div>
+
+
+                <!-- Additional Admin Creation -->
+
+                <div
+                    id="additional-admin-controls"
+                    class="subsection"
+                >
+
+                    <div class="subsection-heading">
+
+                        <div>
+                            <h3>
+                                Create Additional Admin
+                            </h3>
+
+                            <p>
+                                Additional administrators can manage
+                                users, but cannot create or remove admins.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="admin-create-row">
+
+                        <input
+                            type="email"
+                            id="new-admin-email"
+                            placeholder="newadmin@gmail.com"
+                        >
+
+                        <button
+                            id="create-admin"
+                            class="primary-button"
+                        >
+                            Create Admin
+                        </button>
+
+                    </div>
+
+
+                    <p
+                        id="admin-message"
+                        class="message"
+                    >
+                    </p>
+
+                </div>
+
+
+                <!-- Additional Admin List -->
+
+                <div class="subsection">
+
+                    <div class="subsection-heading">
+
+                        <h3>
+                            Additional Administrators
+                        </h3>
+
+                    </div>
+
+                    <div id="additional-admin-list">
+                    </div>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+
+    <footer class="footer">
+
+        <p>
+            Niti Tracker Administration • 2026
+        </p>
+
+    </footer>
+
+
+    <script src="../js/admin.js"></script>
+
+</body>
+
+</html>
