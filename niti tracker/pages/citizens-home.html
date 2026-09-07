@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>Citizen Dashboard - Niti Tracker</title>
+
+<link rel="stylesheet" href="../css/citizen-home.css">
+```
+
+</head>
+
+<body>
+
+```
+<!-- Navigation -->
+
+<header class="navbar">
+
+    <div class="nav-container">
+
+        <div class="brand">
+            <div class="brand-logo">NT</div>
+
+            <div class="brand-text">
+                <h2>Niti Tracker</h2>
+                <span>Citizen Portal</span>
+            </div>
+        </div>
+
+        <nav class="nav-links">
+
+            <a href="citizen-home.html" class="active">
+                Home
+            </a>
+
+            <a href="citizen-report.html">
+                Report
+            </a>
+
+            <a href="about-us.html">
+                About Us
+            </a>
+
+            <a href="citizen-profile.html">
+                Profile
+            </a>
+
+        </nav>
+
+        <button class="logout-btn" id="logout-btn">
+            Logout
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- Main Content -->
+
+<main class="main-content">
+
+    <!-- Welcome Section -->
+
+    <section class="welcome-section">
+
+        <div class="welcome-text">
+
+            <span class="section-label">
+                CITIZEN DASHBOARD
+            </span>
+
+            <h1>
+                Welcome to <span>Niti Tracker</span>
+            </h1>
+
+            <p>
+                Track government projects, monitor public spending,
+                and help improve transparency in your community.
+            </p>
+
+            <div class="welcome-actions">
+
+                <a href="#projects" class="primary-btn">
+                    Explore Projects
+                </a>
+
+                <a href="citizen-report.html" class="secondary-btn">
+                    Report an Issue
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="welcome-visual">
+
+            <div class="visual-circle">
+                <div class="visual-inner">
+                    NT
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Statistics -->
+
+    <section class="stats-section">
+
+        <div class="stat-card">
+
+            <div class="stat-icon blue">
+                P
+            </div>
+
+            <div>
+                <span>Total Projects</span>
+                <strong>128</strong>
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon green">
+                ✓
+            </div>
+
+            <div>
+                <span>Completed</span>
+                <strong>74</strong>
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon orange">
+                ↗
+            </div>
+
+            <div>
+                <span>In Progress</span>
+                <strong>39</strong>
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon red">
+                !
+            </div>
+
+            <div>
+                <span>Issues Reported</span>
+                <strong>15</strong>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Project Section -->
+
+    <section class="projects-section" id="projects">
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="section-label">
+                    PUBLIC PROJECTS
+                </span>
+
+                <h2>
+                    Government Projects
+                </h2>
+
+            </div>
+
+            <a href="#" class="view-all">
+                View All →
+            </a>
+
+        </div>
+
+
+        <!-- Search -->
+
+        <div class="search-box">
+
+            <span class="search-icon">
+                🔍
+            </span>
+
+            <input
+                type="text"
+                id="project-search"
+                placeholder="Search projects by name, location or category..."
+            >
+
+        </div>
+
+
+        <!-- Project Cards -->
+
+        <div class="project-grid" id="project-grid">
+
+
+            <article class="project-card">
+
+                <div class="project-top">
+
+                    <span class="project-category">
+                        Infrastructure
+                    </span>
+
+                    <span class="status completed">
+                        Completed
+                    </span>
+
+                </div>
+
+                <h3>
+                    Janakpur Road Improvement Project
+                </h3>
+
+                <p class="project-location">
+                    📍 Janakpur, Madhesh Province
+                </p>
+
+                <div class="project-details">
+
+                    <div>
+                        <span>Budget</span>
+                        <strong>NPR 4.8 Cr</strong>
+                    </div>
+
+                    <div>
+                        <span>Progress</span>
+                        <strong>100%</strong>
+                    </div>
+
+                </div>
+
+                <div class="progress-bar">
+                    <div class="progress completed-bar"></div>
+                </div>
+
+                <button class="project-btn">
+                    View Details
+                </button>
+
+            </article>
+
+
+            <article class="project-card">
+
+                <div class="project-top">
+
+                    <span class="project-category">
+                        Education
+                    </span>
+
+                    <span class="status progress-status">
+                        In Progress
+                    </span>
+
+                </div>
+
+                <h3>
+                    Community School Renovation
+                </h3>
+
+                <p class="project-location">
+                    📍 Dhanusha, Madhesh Province
+                </p>
+
+                <div class="project-details">
+
+                    <div>
+                        <span>Budget</span>
+                        <strong>NPR 2.2 Cr</strong>
+                    </div>
+
+                    <div>
+                        <span>Progress</span>
+                        <strong>68%</strong>
+                    </div>
+
+                </div>
+
+                <div class="progress-bar">
+                    <div class="progress progress-bar-fill"></div>
+                </div>
+
+                <button class="project-btn">
+                    View Details
+                </button>
+
+            </article>
+
+
+            <article class="project-card">
+
+                <div class="project-top">
+
+                    <span class="project-category">
+                        Water Supply
+                    </span>
+
+                    <span class="status progress-status">
+                        In Progress
+                    </span>
+
+                </div>
+
+                <h3>
+                    Urban Drinking Water Project
+                </h3>
+
+                <p class="project-location">
+                    📍 Janakpur, Madhesh Province
+                </p>
+
+                <div class="project-details">
+
+                    <div>
+                        <span>Budget</span>
+                        <strong>NPR 3.6 Cr</strong>
+                    </div>
+
+                    <div>
+                        <span>Progress</span>
+                        <strong>52%</strong>
+                    </div>
+
+                </div>
+
+                <div class="progress-bar">
+                    <div class="progress progress-bar-fill second"></div>
+                </div>
+
+                <button class="project-btn">
+                    View Details
+                </button>
+
+            </article>
+
+
+            <article class="project-card">
+
+                <div class="project-top">
+
+                    <span class="project-category">
+                        Health
+                    </span>
+
+                    <span class="status completed">
+                        Completed
+                    </span>
+
+                </div>
+
+                <h3>
+                    Primary Health Center Upgrade
+                </h3>
+
+                <p class="project-location">
+                    📍 Siraha, Madhesh Province
+                </p>
+
+                <div class="project-details">
+
+                    <div>
+                        <span>Budget</span>
+                        <strong>NPR 1.9 Cr</strong>
+                    </div>
+
+                    <div>
+                        <span>Progress</span>
+                        <strong>100%</strong>
+                    </div>
+
+                </div>
+
+                <div class="progress-bar">
+                    <div class="progress completed-bar"></div>
+                </div>
+
+                <button class="project-btn">
+                    View Details
+                </button>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- Quick Actions -->
+
+    <section class="quick-section">
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="section-label">
+                    QUICK ACTIONS
+                </span>
+
+                <h2>
+                    How can you contribute?
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="quick-grid">
+
+            <a href="citizen-report.html" class="quick-card">
+
+                <div class="quick-icon">
+                    !
+                </div>
+
+                <div>
+
+                    <h3>
+                        Report an Issue
+                    </h3>
+
+                    <p>
+                        Report problems or irregularities
+                        in government projects.
+                    </p>
+
+                </div>
+
+                <span class="arrow">
+                    →
+                </span>
+
+            </a>
+
+
+            <a href="#projects" class="quick-card">
+
+                <div class="quick-icon">
+                    ◉
+                </div>
+
+                <div>
+
+                    <h3>
+                        Track a Project
+                    </h3>
+
+                    <p>
+                        View project progress, budgets,
+                        and current status.
+                    </p>
+
+                </div>
+
+                <span class="arrow">
+                    →
+                </span>
+
+            </a>
+
+
+            <a href="about-us.html" class="quick-card">
+
+                <div class="quick-icon">
+                    i
+                </div>
+
+                <div>
+
+                    <h3>
+                        Learn About Niti Tracker
+                    </h3>
+
+                    <p>
+                        Understand how the platform
+                        improves transparency.
+                    </p>
+
+                </div>
+
+                <span class="arrow">
+                    →
+                </span>
+
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- Footer -->
+
+<footer class="footer">
+
+    <p>
+        © 2026 Niti Tracker. Building transparency through technology.
+    </p>
+
+</footer>
+
+
+<script src="../js/citizen-home.js"></script>
+```
+
+</body>
+</html>
